@@ -9,7 +9,6 @@ export default function Colors() {
   //
 
   if (style === 'classic') {
-    //Rendering in all the images
     const acaciaImage = require('../../images/classicWand/classic-acacia.png');
     const alderImage = require ('../../images/classicWand/classic-alder.png');
     const appleImage = require ('../../images/classicWand/classic-apple.png');
@@ -48,11 +47,12 @@ export default function Colors() {
     const walnutImage = require ('../../images/classicWand/classic-walnut.png');
     const willowImage = require ('../../images/classicWand/classic-willow.png');
     const yewImage = require ('../../images/classicWand/classic-yew.png');
+  
 
     return (
       <main className='container'>
         <div className='color-choice'>
-          <h3>Colors:</h3>
+          <h3>Choose a Wood Type:</h3>
           <hr/>
 
           <label for='classicAcacia'>
