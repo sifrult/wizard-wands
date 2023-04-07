@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Hello from './pages/Hello'
 
 export default function StoreContainer() {
