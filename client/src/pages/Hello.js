@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 export default function Hello() {
+
     return (
       <div>
-        <p> Hello World!</p>
-    </div>
+        <h1> Hello World </h1>
+      </div>
     );
   }
   
