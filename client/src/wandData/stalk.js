@@ -1,4 +1,4 @@
-export const StalkWands = [
+export const stalkWands = [
     {label: 'Acacia', src: '../images/stalkWand/stalk-acacia.png'},
     {label: 'Alder', src: '../images/stalkWand/stalk-alder.png'},
     {label: 'Apple', src: '../images/stalkWand/stalk-apple.png'},
