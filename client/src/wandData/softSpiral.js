@@ -1,4 +1,4 @@
-export const SoftSpiralWands = [
+export const softSpiralWands = [
     {label: 'Acacia', src: '../images/softSpiralWand/soft-spiral-acacia.png'},
     {label: 'Alder', src: '../images/softSpiralWand/soft-spiral-alder.png'},
     {label: 'Apple', src: '../images/softSpiralWand/soft-spiral-apple.png'},

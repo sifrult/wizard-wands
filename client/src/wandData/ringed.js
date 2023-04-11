@@ -1,4 +1,4 @@
-export const RingedWands = [
+export const ringedWands = [
     {label: 'Acacia', src: '../images/ringedWand/ringed-acacia.png'},
     {label: 'Alder', src: '../images/ringedWand/ringed-alder.png'},
     {label: 'Apple', src: '../images/ringedWand/ringed-apple.png'},
