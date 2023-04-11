@@ -1,6 +1,7 @@
+
+
 import React from 'react';
-// import "../style.css"
-// import styles from "../wandData/styles"
+
 
 export default function StyleGallery({wand,setWand}) {
 
