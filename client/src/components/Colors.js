@@ -12,7 +12,7 @@ export default function Colors() {
     const classicColors = WoodTypes.map((woodType) =>
     
       <div className='colorChoiceContainer' key={woodType.color}>
-        <button onClick={() => setImageSrc(...woodType.classicSrc)}>{woodType.color}</button>
+        <button onClick={() => setImageSrc(woodType.classicSrc)}>{woodType.color}</button>
       </div>
     )
 
@@ -21,7 +21,6 @@ export default function Colors() {
         <div>
           {classicColors}
         </div>
-        <img src={imageSrc} alt={'something is not happening here'} />
       </main>
     )
   }
