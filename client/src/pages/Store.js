@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Aside from './Aside';
-import Colors from './Colors';
+import Colors from '../components/Colors';
 import StyleGallery from '../components/wandStyle';
 import { styles } from '../wandData/styles';
+import { WoodTypes } from '../wandData/woodTypes';
+
+
 
 export default function Store() {
   const [wand,setWand]= useState({})
@@ -10,8 +13,8 @@ export default function Store() {
     return (
       <div>
         <p> Store</p>
-        {styles.map((styles)=>(
-          <StyleGallery key={styles.label} wand={styles} setWand={setWand}/>
+        {WoodTypes.map((styles)=>(
+          <StyleGallery key={styles.color} wand={styles} setWand={setWand}/>
         ))}
         <div>
           <Colors />
