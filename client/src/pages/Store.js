@@ -13,59 +13,67 @@ import Aside from './Aside';
 export default function Store() {
   const [wand, setWand] = useState('');
   const [wandStyle, setWandStyle] = useState([]);
+  const [labelName, setLabelName] = useState('');
 
   const classicHandler = () => {
     const wands = classicWands.map((wand) => (
-      <StyleGallery key={wand.label} wand={wand} setWand={setWand} />
+      <StyleGallery key={wand.label} wand={wand} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(classicWands[0]);
   };
+
   const naturalHandler = () => {
     const wands = naturalWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(naturalWands[0]);
   };;
+
   const notchedHandler = () => {
     const wands = notchedWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(notchedWands[0]);
   };
+
   const ringedHandler = () => {
     const wands = ringedWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(ringedWands[0]);
   };
+
   const softSpiralHandler = () => {
     const wands = softSpiralWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(softSpiralWands[0]);
   };
+
   const spiralHandler = () => {
     const wands = spiralWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(spiralWands[0]);
   };
+
   const stalkHandler = () => {
     const wands = stalkWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(stalkWands[0]);
   };
+
   const crookedSpiralHandler = () => {
     const wands = crookedSpiralWands.map((goop) => (
-      <StyleGallery key={goop.color} wand={goop} setWand={setWand}/>
+      <StyleGallery key={goop.color} wand={goop} setWand={setWand} setLabelName={setLabelName}/>
     ));
     setWandStyle(wands);
     setWand(crookedSpiralWands[0]);
@@ -82,9 +90,9 @@ export default function Store() {
       <div onClick={softSpiralHandler}>Soft Spiral</div>
       <div onClick={spiralHandler}>Spiral</div>
       <div onClick={stalkHandler}>Stalk</div>
+    <div>{wandStyle}</div>
+    <p>Label value: {labelName}</p>
 
-      {wandStyle}
-      {/* {wand && <div>{wand.label}</div>} */}
       <div>
           <img src={wand?.src || ''} alt={wand?.label || ''} />
         </div>
