@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import StyleGallery from '../components/StyleGallery';
 import { classicWands } from '../wandData/classic';
 import { naturalWands } from '../wandData/natural';
-
 import {crookedSpiralWands} from '../wandData/crookedSpiral'
 import {notchedWands} from '../wandData/notched'
 import {ringedWands} from '../wandData/ringed'
@@ -71,7 +70,6 @@ export default function Store() {
     setWandStyle(wands);
     setWand(crookedSpiralWands[0]);
   };
-
 
   return (
     <>

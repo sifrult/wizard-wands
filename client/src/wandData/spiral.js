@@ -1,4 +1,4 @@
-export const SpiralWands = [
+export const spiralWands = [
     {label: 'Acacia', src: '../images/spiralWand/spiral-acacia.png'},
     {label: 'Alder', src: '../images/spiralWand/spiral-alder.png'},
     {label: 'Apple', src: '../images/spiralWand/spiral-apple.png'},
