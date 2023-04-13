@@ -45,7 +45,7 @@ function Signup(props) {
                     />
                 </div>
                 <div className='passwordSignup'>
-                    <label htmlFor='pwd'>Password</label>
+                    <label htmlFor='pwd'>Password:</label>
                     <input
                     placeholder='*********'
                     name='password'
