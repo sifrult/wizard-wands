@@ -71,27 +71,7 @@ export default function Store() {
     setWandStyle(wands);
     setWand(crookedSpiralWands[0]);
   };
-  const softSpiralHandler = () => {
-    const wands = SoftSpiralWands.map((wand) => (
-      <StyleGallery key={wand.label} wand={wand} setWand={setWand} />
-    ));
-    setWandStyle(wands);
-    setWand(SoftSpiralWands[0]);
-  };
-  const spiralHandler = () => {
-    const wands = SpiralWands.map((wand) => (
-      <StyleGallery key={wand.label} wand={wand} setWand={setWand} />
-    ));
-    setWandStyle(wands);
-    setWand(SpiralWands[0]);
-  };
-  const stalkHandler = () => {
-    const wands = StalkWands.map((wand) => (
-      <StyleGallery key={wand.label} wand={wand} setWand={setWand} />
-    ));
-    setWandStyle(wands);
-    setWand(StalkWands[0]);
-  };
+
 
   return (
     <>
