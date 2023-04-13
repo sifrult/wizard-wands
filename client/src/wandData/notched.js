@@ -1,4 +1,4 @@
-export const NotchedWands = [
+export const notchedWands = [
     {label: 'Acacia', src: '../images/notchedWand/notched-acacia.png'},
     {label: 'Alder', src: '../images/notchedWand/notched-alder.png'},
     {label: 'Apple', src: '../images/notchedWand/notched-apple.png'},
