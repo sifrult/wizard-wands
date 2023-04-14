@@ -141,7 +141,7 @@ export default function Store() {
       <div onClick={softSpiralHandler}>Soft Spiral</div>
       <div onClick={spiralHandler}>Spiral</div>
       <div onClick={stalkHandler}>Stalk</div>
-    <div style={{display:'flex', flexWrap: 'wrap'}}>{wandStyle}</div>
+    <div style={{display:'flex', flexWrap: 'wrap', fontFamily: 'aclonica'}}>{wandStyle}</div>
     <p>Label value: {hoveredWandLabel || labelName}</p>
 
       <div>

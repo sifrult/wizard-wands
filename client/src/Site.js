@@ -16,7 +16,7 @@ function Site() {
             backgroundColor: '#white',
         }}>
 
-            <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center'}}>
 
                 <img src={image} alt="Appfront" style={{ width: '50%' }} />
 
