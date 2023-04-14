@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-export default function IndeterminateCheckbox() {
+export default function IndeterminateCheckbox({optionsHandler}) {
   const [checkedOne, setCheckedOne] = useState(false);
   const [checkedTwo, setCheckedTwo] = useState(false);
   const [checkedThree, setCheckedThree] = useState(false);
@@ -11,7 +11,7 @@ export default function IndeterminateCheckbox() {
 
   return (
     <div>
-    
+
       <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
         <p>Wand Core</p>
         <FormControlLabel
@@ -22,10 +22,11 @@ export default function IndeterminateCheckbox() {
               onChange={() => {
                 setCheckedTwo(!checkedTwo);
                 setCheckedThree(!checkedThree);
+                optionsHandler({core:"Dragon Heart String"})
               }}
             />
           }
-        />  
+        />
         <FormControlLabel
           label="Phoenix Feather"
           control={
@@ -34,6 +35,7 @@ export default function IndeterminateCheckbox() {
               onChange={() => {
                 setCheckedOne(!checkedOne);
                 setCheckedThree(!checkedThree);
+                optionsHandler({core:'Phoenix Feather'})
               }}
             />
           }
@@ -46,6 +48,7 @@ export default function IndeterminateCheckbox() {
               onChange={() => {
                 setCheckedOne(!checkedOne);
                 setCheckedTwo(!checkedTwo);
+                optionsHandler({core:'Unicorn Hair'})
               }}
             />
           }
