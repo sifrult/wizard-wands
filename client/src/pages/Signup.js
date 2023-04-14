@@ -30,7 +30,7 @@ function Signup(props) {
 
     return (
         <div className='signupContainer'>
-            <Link to="/login">Login</Link>
+            Already have an account? <Link to="/login">Login here!</Link>
 
             <h2>Create a New Account</h2>
             <form onSubmit={handleFormSubmit}>

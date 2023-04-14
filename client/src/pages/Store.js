@@ -132,7 +132,7 @@ export default function Store() {
 
   return (
     <>
-      <p>Store</p>
+      <h1>Store</h1>
       <div onClick={classicHandler}>Classic</div>
       <div onClick={naturalHandler}>Natural</div>
       <div onClick={crookedSpiralHandler}>Crooked Spiral</div>
