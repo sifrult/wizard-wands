@@ -1,10 +1,3 @@
-// this is now replacing wands
-// core
-// felxabilites
-// length
-// colortype
-// woodtype
-
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
@@ -13,7 +6,11 @@ const productSchema = new Schema({
   core: {
     type: String,
     required: true,
-    //possible choice - y/n
+    choices: [
+      'Dragon Heart String',
+      'Phoenix Feather',
+      'Unicorn Hair',
+    ],
   },
   flexibility: {
     type: String,
