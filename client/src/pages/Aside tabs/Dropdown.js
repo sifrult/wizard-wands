@@ -5,11 +5,12 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function BasicSelect() {
+export default function BasicSelect({optionsHandler}) {
   const [core, setCore] = React.useState('');
 
   const handleChange = (event) => {
     setCore(event.target.value);
+    optionsHandler({flexibility:event.target.value})
   };
 
   return (
@@ -24,24 +25,24 @@ export default function BasicSelect() {
           label="Flexibility"
           onChange={handleChange}
         >
-          <MenuItem value={1}>Quite Bendy</MenuItem>
-          <MenuItem value={2}>Fairly Bendy</MenuItem>
-          <MenuItem value={3}>Very Flexible</MenuItem>
-          <MenuItem value={4}>Quite Flexible</MenuItem>
-          <MenuItem value={5}>Surprisingly Swishy</MenuItem>
-          <MenuItem value={6}>Swishy</MenuItem>
-          <MenuItem value={7}>Slightly Springy</MenuItem>
-          <MenuItem value={8}>Supple</MenuItem>
-          <MenuItem value={9}>Reasonably Supple</MenuItem>
-          <MenuItem value={10}>Pliant</MenuItem>
-          <MenuItem value={11}>Brittle</MenuItem>
-          <MenuItem value={12}>Hard</MenuItem>
-          <MenuItem value={13}>Solid</MenuItem>
-          <MenuItem value={14}>Stiff</MenuItem>
-          <MenuItem value={15}>Rigid</MenuItem>
-          <MenuItem value={16}>Unbending</MenuItem>
-          <MenuItem value={17}>Slightly Yielding</MenuItem>
-          <MenuItem value={18}>Unyielding</MenuItem>
+          <MenuItem value={'Quite Bendy'}>Quite Bendy</MenuItem>
+          <MenuItem value={"Fairly Bendy"}>Fairly Bendy</MenuItem>
+          <MenuItem value={'Very Flexible'}>Very Flexible</MenuItem>
+          <MenuItem value={'Quite Flexible'}>Quite Flexible</MenuItem>
+          <MenuItem value={'Surprisingly Swishy'}>Surprisingly Swishy</MenuItem>
+          <MenuItem value={'Swishy'}>Swishy</MenuItem>
+          <MenuItem value={'Slightly Springy'}>Slightly Springy</MenuItem>
+          <MenuItem value={'Supple'}>Supple</MenuItem>
+          <MenuItem value={'Reasonably Supple'}>Reasonably Supple</MenuItem>
+          <MenuItem value={'Pliant'}>Pliant</MenuItem>
+          <MenuItem value={'Brittle'}>Brittle</MenuItem>
+          <MenuItem value={'Hard'}>Hard</MenuItem>
+          <MenuItem value={'Solid'}>Solid</MenuItem>
+          <MenuItem value={'Stiff'}>Stiff</MenuItem>
+          <MenuItem value={'Rigid'}>Rigid</MenuItem>
+          <MenuItem value={'Unbending'}>Unbending</MenuItem>
+          <MenuItem value={'Slightly Yielding'}>Slightly Yielding</MenuItem>
+          <MenuItem value={'Unyielding'}>Unyielding</MenuItem>
         </Select>
       </FormControl>
     </Box>
