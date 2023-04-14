@@ -10,9 +10,16 @@ import {
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+    nav: {
+        backgroundColor: '#002884',
+    },
     navlinks: {
-      marginLeft: theme.spacing(10),
+      marginLeft: theme.spacing(90),
       display: "flex",
+    },
+    header: {
+        marginLeft: theme.spacing(0),
+        display: "flex",
     },
    logo: {
       flexGrow: "1",
@@ -22,10 +29,10 @@ const useStyles = makeStyles((theme) => ({
       textDecoration: "none",
       color: "white",
       fontSize: "20px",
-      marginLeft: theme.spacing(20),
+      marginLeft: theme.spacing(10),
       "&:hover": {
-        color: "lavender",
-        borderBottom: "1px solid white",
+        color: "gold",
+        borderBottom: "1px solid gold",
       },
     },
   }));
@@ -35,10 +42,10 @@ function Nav() {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <AppBar position="static">
+        <AppBar position="static" className={classes.nav}>
             <CssBaseline />
             <Toolbar>
-                <Typography variant="h4" component="div" className={classes.navlinks}>
+                <Typography variant="h4" component="div" className={classes.header}>
                     Ollisander's
                 </Typography>
                 <div className={classes.navlinks}>
@@ -57,10 +64,10 @@ function Nav() {
       );
     } else {
       return (
-        <AppBar position="static">
+        <AppBar position="static" className={classes.nav}>
             <CssBaseline />
             <Toolbar>
-                <Typography variant="h4" component="div" className={classes.navlinks}>
+                <Typography variant="h4" component="div" className={classes.header}>
                     Ollisander's
                 </Typography>
                 <div className={classes.navlinks}>
