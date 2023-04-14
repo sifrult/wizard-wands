@@ -24,77 +24,67 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "20px",
       marginLeft: theme.spacing(20),
       "&:hover": {
-        color: "yellow",
+        color: "lavender",
         borderBottom: "1px solid white",
       },
     },
   }));
 
 function Nav() {
-
+    const classes = useStyles();
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
         <AppBar position="static">
             <CssBaseline />
             <Toolbar>
-                <Typography variant="h6" component="div" className={classes.navlinks}>
+                <Typography variant="h4" component="div" className={classes.navlinks}>
                     Ollisander's
                 </Typography>
+                <div className={classes.navlinks}>
+                    <Link to="/Store" className={classes.link}>
+                        Store
+                    </Link>
+                    <Link to="/Cart" className={classes.link}>
+                        Cart (NOT WORKING YET)
+                    </Link>
+                    <a href="/" className={classes.link} onClick={() => Auth.logout()}>
+                        Logout
+                    </a>
+                </div>
             </Toolbar>
-
         </AppBar>
-        // <ul className="flex-row">
-        //   <li>
-        //     <Link to="/Store">
-        //       Store
-        //     </Link>
-        //   </li>
-        //   <li>
-        //     <Link to="/Cart">
-        //       Cart (NOT WORKING YET)
-        //     </Link>
-        //   </li>
-        //   <li>
-        //     <a href="/" onClick={() => Auth.logout()}>
-        //       Logout
-        //     </a>
-        //   </li>
-        // </ul>
       );
     } else {
       return (
-        <ul>
-          <li>
-            <Link to="/Store">
-              Store
-            </Link>
-          </li>
-          <li>
-            <Link to="/Login">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/signup">
-              Sign Up
-            </Link>
-          </li>
-        </ul>
+        <AppBar position="static">
+            <CssBaseline />
+            <Toolbar>
+                <Typography variant="h4" component="div" className={classes.navlinks}>
+                    Ollisander's
+                </Typography>
+                <div className={classes.navlinks}>
+                    <Link to="/Store" className={classes.link}>
+                        Store
+                    </Link>
+                    <Link to="/Login" className={classes.link}>
+                        Login
+                    </Link>
+                    <Link to="/Signup" className={classes.link}>
+                        Signup
+                    </Link>
+                </div>
+            </Toolbar>
+        </AppBar>
       );
     }
   }
 
   return (
-    <header>
-      <h1>
-          Ollisander's
-      </h1>
-
       <nav>
         {showNavigation()}
       </nav>
-    </header>
+    
   );
 }
 
