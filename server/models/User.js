@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+
+const Order = require('./Order');
 
 const userSchema = new Schema({
     username: {
@@ -8,21 +9,21 @@ const userSchema = new Schema({
         unique: true,
         trim: true,
     },
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-        match: [/.+@.+\..+/, 'Must match an email address!'],
-    },
     password: {
         type: String,
         required: true,
         minlength: 8,
     },
-    wands: [{
+    products: [{
         type: Schema.Types.ObjectId,
-        ref: 'Wand',
+        ref: 'Product',
     }],
+    // orders: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Order',
+    // }],
+    orders: [Order.schema]
+    // which one do we chose???
 });
 
 userSchema.pre('save', async function (next) {

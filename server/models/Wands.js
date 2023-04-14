@@ -1,22 +1,24 @@
-const mongoose = require('mongoose');
+// ↓↓↓↓ replaced by models/Product.js ↓↓↓↓↓↓
 
-const { Schema } = mongoose;
+// const mongoose = require('mongoose');
 
-const wandSchema = new Schema({
-    wandType: {
-        type: String,
-        required: true
-    },
-    woodType: {
-        type: String,
-        required: true
-    },
-    url: {
-        Type: String,
-        required: true
-    }
-});
+// const { Schema } = mongoose;
 
-const Wand = mongoose.model('Wand', wandSchema);
+// const wandSchema = new Schema({
+//     wandType: {
+//         type: String,
+//         required: true
+//     },
+//     woodType: {
+//         type: String,
+//         required: true
+//     },
+//     url: {
+//         Type: String,
+//         required: true
+//     }
+// });
 
-module.exports = Wand;
+// const Wand = mongoose.model('Wand', wandSchema);
+
+// module.exports = Wand;

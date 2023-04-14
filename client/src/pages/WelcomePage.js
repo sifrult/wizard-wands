@@ -5,7 +5,6 @@ export default function WelcomePage() {
     return (
       <div>
         <p> Welcome Page</p>
-        <img src={storefront}></img>
     </div>
     );
   }

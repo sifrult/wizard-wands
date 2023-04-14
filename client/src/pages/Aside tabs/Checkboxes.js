@@ -8,33 +8,10 @@ export default function IndeterminateCheckbox() {
   const [checkedTwo, setCheckedTwo] = useState(false);
   const [checkedThree, setCheckedThree] = useState(false);
 
-  // const children = (
-  //   <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
-  //     <FormControlLabel
-  //       label="Child 1"
-  //       control={
-  //         <Checkbox
-  //           checked={checkedOne}
-  //           onChange={() => setCheckedOne(!checkedOne)}
-  //         />
-  //       }
-  //     />
-  //     <FormControlLabel
-  //       label="Child 2"
-  //       control={
-  //         <Checkbox
-  //           checked={checkedTwo}
-  //           onChange={() => setCheckedTwo(!checkedTwo)}
-  //         />
-  //       }
-  //     />
-  //   </Box>
-  // );
 
   return (
     <div>
     
-      {/* {children} */}
       <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
         <p>Wand Core</p>
         <FormControlLabel
@@ -50,7 +27,7 @@ export default function IndeterminateCheckbox() {
           }
         />  
         <FormControlLabel
-          label="Pheonix Feather"
+          label="Phoenix Feather"
           control={
             <Checkbox
               disabled={checkedTwo}
@@ -62,7 +39,7 @@ export default function IndeterminateCheckbox() {
           }
         />
         <FormControlLabel
-          label="Child 2"
+          label="Unicorn Hair"
           control={
             <Checkbox
               disabled={checkedThree}
