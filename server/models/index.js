@@ -1,4 +1,5 @@
-const Wands = require('./User.js');
-const User = require('./Wands.js');
+const User = require('./User.js');
+const Product = require('./Product.js');
+const Order = require('./Order.js');
 
-module.exports = { User, Wands };
+module.exports = { User, Product, Order };
