@@ -8,20 +8,25 @@ import { Link, BrowserRouter as Router } from "react-router-dom";
 
 function Site() {
     useEffect(() => {
-        document.body.style.backgroundColor = "black";
+        document.body.style.backgroundImage = 'url(/diagon-alley1.jpg)';
+        document.body.style.backgroundSize = 'cover'; // set background size to cover entire page
+        document.body.style.backgroundRepeat = 'no-repeat'; // set background to not repeat
       }, []);
 
     return (
         <Box component="span" sx={{
             width: '100%',
             height: 300,
-            backgroundColor: '#ff5722',
+            backgroundColor: '#ff5722'
         }}>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#ff5722'}}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', display: "flex", backgroundColor: '#1c2e4a',
+        color: "#d4af37",
+        fontFamily: "Brush Script MT, Brush Script Std, cursive",
+        fontSize: "15px",}}>
                 <h1>Welcome to Ollisander's! Enter to find your perfect wand</h1>
             </Box>
-            <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center' }}>
+            <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', marginTop:'200px' }}>
                 <img src={image} alt="Appfront" style={{ width: '50%' }} />
 
 

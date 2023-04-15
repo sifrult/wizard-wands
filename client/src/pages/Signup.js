@@ -50,7 +50,7 @@ function Signup(props) {
                     placeholder='*********'
                     name='password'
                     type='password'
-                    id='password'
+                    id='pwd'
                     onChange={handleChange}
                     />
                 </div>
