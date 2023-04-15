@@ -10,6 +10,7 @@ import { softSpiralWands } from '../wandData/softSpiral'
 import { spiralWands } from '../wandData/spiral'
 import { stalkWands } from '../wandData/stalk'
 import Aside from './Aside';
+import '@fontsource/aclonica';
 
 
 export default function Store() {
@@ -167,6 +168,7 @@ export default function Store() {
   }
 
   return (
+    <div style={{ fontFamily: 'aclonica' }}>
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <div>
         <div onClick={classicHandler}>Classic</div>
@@ -189,6 +191,7 @@ export default function Store() {
         <Aside optionsHandler={optionsHandler} />
       </div>
       <button onClick={checkWand}>Is this your wand?</button>
+    </div>
     </div>
   );
 }
