@@ -11,6 +11,7 @@ import { spiralWands } from '../wandData/spiral'
 import { stalkWands } from '../wandData/stalk'
 import Aside from './Aside';
 import '@fontsource/aclonica';
+import { Box, Button, Paper } from '@mui/material';
 
 
 export default function Store() {
@@ -169,29 +170,57 @@ export default function Store() {
 
   return (
     <div style={{ fontFamily: 'aclonica' }}>
-    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      <div>
-        <div onClick={classicHandler}>Classic</div>
-        <div onClick={naturalHandler}>Natural</div>
-        <div onClick={crookedSpiralHandler}>Crooked Spiral</div>
-        <div onClick={notchedHandler}>Notched</div>
-        <div onClick={ringedHandler}>Ringed</div>
-        <div onClick={softSpiralHandler}>Soft Spiral</div>
-        <div onClick={spiralHandler}>Spiral</div>
-        <div onClick={stalkHandler}>Stalk</div>
+      <div style={{}}>
+        <div style={{width:'60%'}}>
+          <div onClick={classicHandler}>Classic</div>
+          <div onClick={naturalHandler}>Natural</div>
+          <div onClick={crookedSpiralHandler}>Crooked Spiral</div>
+          <div onClick={notchedHandler}>Notched</div>
+          <div onClick={ringedHandler}>Ringed</div>
+          <div onClick={softSpiralHandler}>Soft Spiral</div>
+          <div onClick={spiralHandler}>Spiral</div>
+          <div onClick={stalkHandler}>Stalk</div>
+        </div>
+        <div>
+          <img src={wand?.src || ''} alt={wand?.label || ''} />
+        </div>
+        <div>
+          <p>Wood type: {hoveredWandLabel || labelName}</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', width: '40%' }}>{wandStyle}</div>
+        </div>
+        <div>
+
+          <aside style={{ width: '30%', paddingLeft: '15px', marginLeft: '150px', marginTop: '0%', float: 'right' }} >
+            <Box
+              sx={{
+                border: 1,
+                pb: 20,
+                pt: 20,
+              }}
+            >
+              <p>
+                <Aside optionsHandler={optionsHandler} />
+              </p></Box>
+          </aside>
+
+        </div>
+        <Button onClick={checkWand} disableRipple='true'
+          sx={{
+            variant: 'contained',
+            backgroundColor: 'grey',
+            marginTop: "400px",
+            marginLeft: '100px',
+            fontFamily: 'aclonica',
+            padding: '10px',
+            color: 'white',
+            ":hover": {
+              bgcolor: 'grey',
+              boxShadow: 3,
+
+            }
+          }}>Is this your wand?</Button>
       </div>
-      <div>
-        <img src={wand?.src || ''} alt={wand?.label || ''} />
-      </div>
-      <div>
-        <p>Wood type: {hoveredWandLabel || labelName}</p>
-        <div style={{ display: 'flex', flexWrap: 'wrap', width: '40%' }}>{wandStyle}</div>
-      </div>
-      <div>
-        <Aside optionsHandler={optionsHandler} />
-      </div>
-      <button onClick={checkWand}>Is this your wand?</button>
     </div>
-    </div>
+
   );
 }
