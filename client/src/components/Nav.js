@@ -11,19 +11,21 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     nav: {
-        backgroundColor: '#002884',
+        backgroundColor: '#1c2e4a',
+        padding: "10px",
     },
     navlinks: {
-      marginLeft: theme.spacing(90),
+      marginRight: 20,
       display: "flex",
+      flexDirection: "row",
+      flexWrap: "wrap",
     },
     header: {
         marginLeft: theme.spacing(0),
         display: "flex",
-    },
-   logo: {
-      flexGrow: "1",
-      cursor: "pointer",
+        color: "#d4af37",
+        fontFamily: "Brush Script MT, Brush Script Std, cursive",
+        fontSize: "50px",
     },
     link: {
       textDecoration: "none",
@@ -31,8 +33,8 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "20px",
       marginLeft: theme.spacing(10),
       "&:hover": {
-        color: "gold",
-        borderBottom: "1px solid gold",
+        color: "#d4af37",
+        borderBottom: "1px solid #d4af37",
       },
     },
   }));
