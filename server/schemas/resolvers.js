@@ -27,13 +27,14 @@ const resolvers = {
     },
 
     Mutation: {
-        addUser: async (parent, { username, password }) => {
-            const user = await User.create({ username, password });
+        addUser: async (parent, args) => {
+            const user = await User.create(args);
             const token = signToken(user);
+
             return { token, user };
         },
         login: async (parent, { username, password }) => {
-            const user = await User.findOne({ username });
+            const user = await User.findAll({ username });
 
             if (!user) {
                 throw new AuthenticationError('This username does not exist!');
@@ -44,6 +45,7 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect password!');
             }
             const token = signToken(user);
+            
             return { token, user };
         },
     },

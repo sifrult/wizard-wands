@@ -12,10 +12,12 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     nav: {
         backgroundColor: '#1c2e4a',
+        padding: "10px",
     },
     navlinks: {
       marginRight: 20,
       display: "flex",
+      flexDirection: "row",
       flexWrap: "wrap",
     },
     header: {
