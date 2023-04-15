@@ -1,62 +1,68 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { LOGIN_USER } from '../utils/mutations';
 
 function Login(props) {
     const [formState, setFormState] = useState({ username: '', password: '' });
-    const [loginUser] = useMutation(LOGIN_USER); 
+    const [login, { error }] = useMutation(LOGIN);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        const mutationResponse = await loginUser({ 
-            variables: {
-                username: formState.username,
-                password: formState.password,
-            },
-        });
-        const token = mutationResponse.data.loginUser.token;
-        Auth.login(token);
+        try {
+            const mutationResponse = await login({
+                variables: { username: formState.username, password: formState.password },
+            });
+            const token = mutationResponse.data.login.token;
+            Auth.login(token);
+        } catch (e) {
+            console.log(e);
+        }
     };
 
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFormState({
-            ...formState,
+          ...formState,
             [name]: value,
         });
     };
 
     return (
-        <div className='loginContainer'> 
-            <Link to="/signup">Signup</Link> 
-            
-            <h2>Login</h2> 
+        <div className="container">
+            First Time? <Link to="/signup">Sign Up!</Link>
+
+            <h2>Login</h2>
             <form onSubmit={handleFormSubmit}>
-                <div className='usernameLogin'> 
-                    <label htmlFor='username'>Username:</label>
+                <div className='flex-row space-between my-2'>
+                    <label htmlFor='username'>Username: </label>
                     <input
-                    placeholder='Username'
+                    placeholder="username"
                     name='username'
-                    type='text' 
+                    type='text'
                     id='username'
                     onChange={handleChange}
                     />
                 </div>
-                <div className='passwordLogin'> 
-                    <label htmlFor='pwd'>Password</label>
+                <div className='flex-row space-between my-2'>
+                    <label htmlFor='pwd'>Password: </label>
                     <input
-                    placeholder='*********'
+                    plaaceholder="********"
                     name='password'
                     type='password'
-                    id='password'
+                    id='pwd'
                     onChange={handleChange}
                     />
                 </div>
-                <div className='submitBtn'>
-                    <button type='submit'>Submit</button>
-                </div>
+                {error ? (
+                    <div>
+                        <p className="error-text">Username or password is incorrect</p>
+                    </div>
+                    ) : null}
+                    <div className='flex-row flex-end'>
+                        <button type='submit'>Submit</button>
+                    </div>       
             </form>
         </div>
     );

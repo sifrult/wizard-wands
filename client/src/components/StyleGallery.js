@@ -7,12 +7,10 @@ export default function StyleGallery({ wand, setWand, labelName, setLabelName, h
   };
 
   const handleMouseOver = () => {
-    console.log(`Mouse is over the ${wand.label} wand`);
     setHoveredWandLabel(wand.label);
   };
 
   const handleMouseLeave = () => {
-    console.log(`Mouse left the ${wand.label} wand`);
     setHoveredWandLabel(null);
   };
 
