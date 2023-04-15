@@ -40,7 +40,7 @@ function Login(props) {
                     <input
                     placeholder="username"
                     name='username'
-                    type='text'
+                    type='username'
                     id='username'
                     onChange={handleChange}
                     />
@@ -48,7 +48,7 @@ function Login(props) {
                 <div className='flex-row space-between my-2'>
                     <label htmlFor='pwd'>Password: </label>
                     <input
-                    plaaceholder="********"
+                    placeholder="********"
                     name='password'
                     type='password'
                     id='pwd'
