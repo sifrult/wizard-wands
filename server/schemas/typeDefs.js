@@ -12,8 +12,8 @@ type Product {
     core: String
     flexibility: Float
     length: Int
-    woodType: String
-    wandType: String
+    woodtype: String
+    wandtype: String
 }
 
 type User {
@@ -22,21 +22,28 @@ type User {
     orders: [Order]
 }
 
+type Checkout {
+    session: ID
+}
+
 type Auth {
-    token: ID!
+    token: ID
     user: User
 }
 
 type Query {
-    products(name: String): [Product]
+    products(wandtype: String): [Product]
     product(_id: ID!): Product
-    users: User
+    user: User
     order(_id: ID!): Order
+    checkout(products: [ID]!): Checkout
 }
 
 type Mutation {
     addUser(username: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
+    updateUser(username: String, password: String): User
+    updateProduct(_id: ID!, quantity: Int!): Product
     login(username: String!, password: String!): Auth
 }
 `;

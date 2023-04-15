@@ -10,6 +10,7 @@ export default function BasicSelect({optionsHandler}) {
 
   const handleChange = (event) => {
     setCore(event.target.value);
+
     optionsHandler({flexibility:event.target.value})
   };
 
