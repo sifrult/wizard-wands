@@ -7,7 +7,7 @@ import WandSlider from './Aside tabs/Slider';
 function Aside({optionsHandler}) {
 
     return (
-        <div className='aside'>
+        <div >
             <Stack alignItems='center'>
                 <Checkbox className='checkbox' optionsHandler={optionsHandler}/>
                 <WandSlider className='wandslider' optionsHandler={optionsHandler}/>
