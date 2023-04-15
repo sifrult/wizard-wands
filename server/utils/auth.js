@@ -3,12 +3,12 @@ const jwt = require('jsonwebtoken');
 // set token secret and expiration date
 // the secret needs to be moved into the .env file
 
-const secret = 'expelliarmus';
+const secret = `${process.env.SECRET}`;
 const expiration = '2h';
 
 module.exports = {
   authMiddleware: function ({req}) {
-    let token = req.query.token || req.headers.authorization || req.query.token;
+    let token = req.body.token || req.headers.authorization || req.query.token;
 
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
