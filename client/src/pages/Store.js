@@ -154,41 +154,36 @@ export default function Store() {
   const checkWand = () => {
     var randNum = Math.random();
 
-    if (randNum < 0.9 && wand && labelName && options) {
+    if (randNum < 0.9 && wand && labelName && options.core && options.length && options.flexibility) {
       console.log('YES')
     } else {
       console.log('NO')
     }
   }
 
-
-
-
   return (
-    <>
-      <h1>Store</h1>
-      <div onClick={classicHandler}>Classic</div>
-      <div onClick={naturalHandler}>Natural</div>
-      <div onClick={crookedSpiralHandler}>Crooked Spiral</div>
-      <div onClick={notchedHandler}>Notched</div>
-      <div onClick={ringedHandler}>Ringed</div>
-      <div onClick={softSpiralHandler}>Soft Spiral</div>
-      <div onClick={spiralHandler}>Spiral</div>
-      <div onClick={stalkHandler}>Stalk</div>
-      <div style={{display:'flex', flexWrap: 'wrap'}}>{wandStyle}</div>
-      <p>Wood type: {hoveredWandLabel || labelName}</p>
-
+    <div style={{display:'flex', flexWrap: 'wrap'}}>
+      <div>
+        <div onClick={classicHandler}>Classic</div>
+        <div onClick={naturalHandler}>Natural</div>
+        <div onClick={crookedSpiralHandler}>Crooked Spiral</div>
+        <div onClick={notchedHandler}>Notched</div>
+        <div onClick={ringedHandler}>Ringed</div>
+        <div onClick={softSpiralHandler}>Soft Spiral</div>
+        <div onClick={spiralHandler}>Spiral</div>
+        <div onClick={stalkHandler}>Stalk</div>
+      </div>
       <div>
         <img src={wand?.src || ''} alt={wand?.label || ''} />
       </div>
-
-
-      <Aside optionsHandler={optionsHandler}/>
-      <button variant='contained' onClick={optionsHandler}>Save options</button>
-
-
-
+      <div>
+        <p>Wood type: {hoveredWandLabel || labelName}</p>
+        <div style={{display:'flex', flexWrap: 'wrap', width:'40%'}}>{wandStyle}</div>
+      </div>
+      <div>
+        <Aside optionsHandler={optionsHandler}/>
+      </div>
       <button onClick={checkWand}>Is this your wand?</button>
-    </>
+    </div>
   );
 }
