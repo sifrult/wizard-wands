@@ -11,21 +11,19 @@ import { spiralWands } from '../wandData/spiral'
 import { stalkWands } from '../wandData/stalk'
 import Aside from './Aside';
 import '@fontsource/aclonica';
-import { Box, Button, Paper } from '@mui/material';
-
+import { Box, Button } from '@mui/material';
 
 export default function Store() {
   const [wand, setWand] = useState('');
   const [wandStyle, setWandStyle] = useState([]);
   const [labelName, setLabelName] = useState('');
   const [hoveredWandLabel, setHoveredWandLabel] = useState(null);
+  const [options, setOptions] = useState({ core: '', length: '', flexibility: '' })
+
   useEffect(() => {
     document.body.style.backgroundImage = 'none';
     document.body.style.backgroundColor = "white";
   }, []);
-
-
-
 
   const classicHandler = () => {
     const wands = classicWands.map((wand) => (
@@ -141,8 +139,6 @@ export default function Store() {
     setWand(crookedSpiralWands[0]);
   };
 
-  const [options, setOptions] = useState({ core: '', length: '', flexibility: '' })
-
   const optionsHandler = (data) => {
 
     let keyName = Object.keys(data)[0]
@@ -158,14 +154,22 @@ export default function Store() {
 
     console.log(options.length, options.flexibility)
   }
+  const [isWandValid, setIsWandValid] = useState(null);
+
   const checkWand = () => {
     var randNum = Math.random();
 
     if (randNum < 0.9 && wand && labelName && options.core && options.length && options.flexibility) {
       console.log('YES')
+      setIsWandValid(true)
     } else {
       console.log('NO')
+      setIsWandValid(false)
     }
+  }
+
+  const checkout = async () => {
+    window.location.href = 'https://buy.stripe.com/test_8wM0337U9cbdgpy288';
   }
 
   return (
@@ -219,6 +223,13 @@ export default function Store() {
 
             }
           }}>Is this your wand?</Button>
+          <p>
+            {isWandValid ? (
+              <div>YES! <button onClick={checkout}>Checkout</button></div>
+            ) : (
+              <div> Nopeee </div>
+            )}
+          </p>
       </div>
     </div>
 

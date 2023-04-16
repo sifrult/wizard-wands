@@ -91,7 +91,7 @@ const resolvers = {
             return { token, user };
         },
         login: async (parent, { username, password }) => {
-            const user = await User.findAll({ username });
+            const user = await User.findOne({ username });
 
             if (!user) {
                 throw new AuthenticationError('This username does not exist!');
