@@ -1,15 +1,3 @@
-// const jwt = require('jsonwebtoken');
-
-// const secret = 'expelliarmus';
-// const expiration = '2h';
-
-// module.exports = {
-//   signToken: function ({ username, password, _id }) {
-//     const payload = { username, password, _id };
-//     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
-//   },
-// };
-
 import decode from 'jwt-decode';
 
 class AuthService {
@@ -54,4 +42,5 @@ class AuthService {
     window.location.assign('/');
   }
 }
-export default new AuthService();
+const authService = new AuthService()
+export default authService

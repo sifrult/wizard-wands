@@ -3,7 +3,7 @@ import image from './assets/storefront.png'
 import { Box } from "@mui/material";
 import { Button } from "@mui/material";
 import { useEffect } from "react";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function Site() {
@@ -20,7 +20,7 @@ function Site() {
             backgroundColor: '#ff5722'
         }}>
 
-            <Box sx={{ display: 'flex', justifyContent: 'center', display: "flex", backgroundColor: '#1c2e4a',
+            <Box sx={{ display: 'flex', justifyContent: 'center', backgroundColor: '#1c2e4a',
         color: "#d4af37",
         fontFamily: "Brush Script MT, Brush Script Std, cursive",
         fontSize: "15px",}}>

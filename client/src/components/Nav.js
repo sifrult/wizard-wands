@@ -54,9 +54,6 @@ function Nav() {
                     <Link to="/Store" className={classes.link}>
                         Store
                     </Link>
-                    <Link to="/Cart" className={classes.link}>
-                        Cart (NOT WORKING YET)
-                    </Link>
                     <a href="/" className={classes.link} onClick={() => Auth.logout()}>
                         Logout
                     </a>
@@ -93,7 +90,7 @@ function Nav() {
       <nav>
         {showNavigation()}
       </nav>
-    
+
   );
 }
 
