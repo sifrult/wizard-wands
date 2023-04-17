@@ -10,9 +10,7 @@ export default function IndeterminateCheckbox({optionsHandler}) {
 
 
   return (
-    <div>
-
-      <Box sx={{ display: "flex", flexDirection: "column", ml: 3 }}>
+    <div className='asideOptn'>
         <p>Wand Core</p>
         <FormControlLabel
           label="Dragon Heart String"
@@ -53,7 +51,6 @@ export default function IndeterminateCheckbox({optionsHandler}) {
             />
           }
         />
-      </Box>
     </div>
   );
 }

@@ -11,14 +11,14 @@ import { spiralWands } from '../wandData/spiral'
 import { stalkWands } from '../wandData/stalk'
 import Aside from './Aside';
 import '@fontsource/aclonica';
-import { Box, Button } from '@mui/material';
 
 export default function Store() {
   const [wand, setWand] = useState('');
-  const [wandStyle, setWandStyle] = useState([]);
+  const [wandStyle, setWandStyle] = useState(null);
   const [labelName, setLabelName] = useState('');
   const [hoveredWandLabel, setHoveredWandLabel] = useState(null);
   const [options, setOptions] = useState({ core: '', length: '', flexibility: '' })
+  const [isWandValid, setIsWandValid] = useState(undefined);
 
   useEffect(() => {
     document.body.style.backgroundImage = 'none';
@@ -154,16 +154,13 @@ export default function Store() {
 
     console.log(options.length, options.flexibility)
   }
-  const [isWandValid, setIsWandValid] = useState(null);
-
+  
   const checkWand = () => {
     var randNum = Math.random();
 
     if (randNum < 0.9 && wand && labelName && options.core && options.length && options.flexibility) {
-      console.log('YES')
       setIsWandValid(true)
     } else {
-      console.log('NO')
       setIsWandValid(false)
     }
   }
@@ -174,69 +171,55 @@ export default function Store() {
 
   return (
     <div style={{ fontFamily: 'aclonica' }}>
-      <div style={{}}>
-        <div style={{display:'flex', alignItems: 'flex-start'}}>
-        <div style={{ width: 'auto', margin: '50px', lineHeight: '2.5' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={classicHandler}>Classic</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={naturalHandler}>Natural</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={crookedSpiralHandler}>Crooked Spiral</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={notchedHandler}>Notched</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={ringedHandler}>Ringed</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={softSpiralHandler}>Soft Spiral</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={spiralHandler}>Spiral</div>
-            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={stalkHandler}>Stalk</div>
+
+      <div className='store'>
+
+        <div className='topContainer'>
+
+          <div className='wandChoices'>
+            <div className='wand' onClick={classicHandler}>Classic</div>
+            <div className='wand' onClick={naturalHandler}>Natural</div>
+            <div className='wand' onClick={crookedSpiralHandler}>Crooked Spiral</div>
+            <div className='wand' onClick={notchedHandler}>Notched</div>
+            <div className='wand' onClick={ringedHandler}>Ringed</div>
+            <div className='wand' onClick={softSpiralHandler}>Soft Spiral</div>
+            <div className='wand' onClick={spiralHandler}>Spiral</div>
+            <div className='wand' onClick={stalkHandler}>Stalk</div>
           </div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'flex-start' }}>
-        <div style={{ margin: '80% 100px 0', width: '100px' }}>
-          <img src={wand?.src || ''} alt={wand?.label || ''} />
-        </div>
-        </div>
-        <div style={{ margin: '0', marginLeft: '20px', marginRight: '150px', width: '30%', float: 'right' }}>
-          <p style={{ margin: '60px' }}>Wood type: {hoveredWandLabel || labelName}</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', width: '140%', gap: '8px', margin: '60px' }}>{wandStyle}</div>
-        </div>
-        <div>
-        </div>
 
-          <aside style={{ width: '30%', paddingLeft: '15px', marginLeft: '150px', marginTop: '0%', float: 'right' }} >
-            <Box
-              sx={{
-                border: 1,
-                pb: 20,
-                pt: 20,
-              }}
-            >
-              <p>
-                <Aside optionsHandler={optionsHandler} />
-              </p></Box>
-          </aside>
+          <div className='wandImg'>
+            <img src={wand?.src || ''} alt={wand?.label || ''} />
+          </div>
+
+          <div className='colorSection'>
+            {wandStyle ? <p>Wood type: {hoveredWandLabel || labelName}</p> : null}
+            <div className='colorChoices'>{wandStyle}</div>
+          </div>
 
         </div>
-        <Button onClick={checkWand} disableRipple='true'
-          sx={{
-            variant: 'contained',
-            backgroundColor: 'grey',
-            marginTop: "400px",
-            marginLeft: '100px',
-            fontFamily: 'aclonica',
-            padding: '10px',
-            color: 'white',
-            ":hover": {
-              bgcolor: 'grey',
-              boxShadow: 3,
 
-            }
-          }}>Is this your wand?</Button>
-        <p>
-          {isWandValid ? (
-            <div>YES! <button onClick={checkout}>Checkout</button></div>
-          ) : (
-            <div> Nopeee </div>
-          )}
-        </p>
+        <div className='bottomContainer'>
+
+          <div className='aside'>
+            <Aside optionsHandler={optionsHandler} />
+          </div>
+
+          <div className='button'>
+            <button onClick={checkWand}>Is this your wand?</button>
+            <p> {isWandValid === undefined ? (<div></div>
+            ) : (isWandValid ? (
+              <div className='afterBtn'>YES! <button onClick={checkout}>Checkout</button></div>
+            ) : (
+              <div className='afterBtn'>No, try again</div>
+            )
+            )}
+            </p>
+          </div>
+
+        </div>
+
       </div>
+
     </div>
 
   );

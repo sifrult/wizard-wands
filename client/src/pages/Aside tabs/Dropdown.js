@@ -15,15 +15,13 @@ export default function BasicSelect({optionsHandler}) {
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <div className='asideOptn'>
       <p>Wand Flexibility:</p>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Flexibility</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={core}
-          label="Flexibility"
           onChange={handleChange}
         >
           <MenuItem value={'Quite Bendy'}>Quite Bendy</MenuItem>
@@ -46,6 +44,6 @@ export default function BasicSelect({optionsHandler}) {
           <MenuItem value={'Unyielding'}>Unyielding</MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    </div>
   );
 }

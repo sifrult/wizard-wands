@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { Box, Button } from '@mui/material';
-import { UndoRounded } from '@mui/icons-material';
 
 function Login(props) {
     const [formState, setFormState] = useState({ username: '', password: '' });
