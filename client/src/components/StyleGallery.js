@@ -23,6 +23,7 @@ export default function StyleGallery({ wand, setWand, labelName, setLabelName, h
     backgroundColor: wand.hex,
     width: '50px',
     height: '50px',
+    borderRadius: '10px',
   };
 
   return (

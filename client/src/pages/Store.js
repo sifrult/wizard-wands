@@ -175,24 +175,30 @@ export default function Store() {
   return (
     <div style={{ fontFamily: 'aclonica' }}>
       <div style={{}}>
-        <div style={{width:'60%'}}>
-          <div onClick={classicHandler}>Classic</div>
-          <div onClick={naturalHandler}>Natural</div>
-          <div onClick={crookedSpiralHandler}>Crooked Spiral</div>
-          <div onClick={notchedHandler}>Notched</div>
-          <div onClick={ringedHandler}>Ringed</div>
-          <div onClick={softSpiralHandler}>Soft Spiral</div>
-          <div onClick={spiralHandler}>Spiral</div>
-          <div onClick={stalkHandler}>Stalk</div>
+        <div style={{display:'flex', alignItems: 'flex-start'}}>
+        <div style={{ width: 'auto', margin: '50px', lineHeight: '2.5' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={classicHandler}>Classic</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={naturalHandler}>Natural</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={crookedSpiralHandler}>Crooked Spiral</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={notchedHandler}>Notched</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={ringedHandler}>Ringed</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={softSpiralHandler}>Soft Spiral</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={spiralHandler}>Spiral</div>
+            <div style={{ border: '1px solid black', borderRadius: '5px', padding: '5px', marginBottom: '5px' }} onClick={stalkHandler}>Stalk</div>
+          </div>
         </div>
-        <div>
+        <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <div style={{ margin: '80% 100px 0', width: '100px' }}>
           <img src={wand?.src || ''} alt={wand?.label || ''} />
         </div>
-        <div>
-          <p>Wood type: {hoveredWandLabel || labelName}</p>
-          <div style={{ display: 'flex', flexWrap: 'wrap', width: '40%' }}>{wandStyle}</div>
+        </div>
+        <div style={{ margin: '0', marginLeft: '20px', marginRight: '150px', width: '30%', float: 'right' }}>
+          <p style={{ margin: '60px' }}>Wood type: {hoveredWandLabel || labelName}</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', width: '140%', gap: '8px', margin: '60px' }}>{wandStyle}</div>
         </div>
         <div>
+        </div>
 
           <aside style={{ width: '30%', paddingLeft: '15px', marginLeft: '150px', marginTop: '0%', float: 'right' }} >
             <Box
@@ -223,13 +229,13 @@ export default function Store() {
 
             }
           }}>Is this your wand?</Button>
-          <p>
-            {isWandValid ? (
-              <div>YES! <button onClick={checkout}>Checkout</button></div>
-            ) : (
-              <div> Nopeee </div>
-            )}
-          </p>
+        <p>
+          {isWandValid ? (
+            <div>YES! <button onClick={checkout}>Checkout</button></div>
+          ) : (
+            <div> Nopeee </div>
+          )}
+        </p>
       </div>
     </div>
 
