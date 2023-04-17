@@ -27,6 +27,11 @@
     margin: 50px 0;
 }
 
+.notLoggedIn {
+    padding-top: 25px;
+    color: rgb(158, 5, 5);
+}
+
 .colorChoices {
     display: flex;
     flex-direction: row;

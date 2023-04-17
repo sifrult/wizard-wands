@@ -6,7 +6,7 @@
 Ollisander's Wand Store is a MERN Stack application. This app uses a React front end, a node.js and express.js backend, and a MONGODB server to create a store page where users can create and customize a magic wand. 
 
 ## Table of Contents  
-[Description](#Description)  
+[Description](#Description) 
 [Usage](#Usage) 
 [Screenshots](#Screenshots)  
 [Credits](#Credits) 

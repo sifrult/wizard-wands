@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Auth from "../utils/auth";
 import { useEffect } from "react";
 import StyleGallery from '../components/StyleGallery';
 import { classicWands } from '../wandData/classic';
@@ -169,58 +170,103 @@ export default function Store() {
     window.location.href = 'https://buy.stripe.com/test_8wM0337U9cbdgpy288';
   }
 
-  return (
-    <div style={{ fontFamily: 'aclonica' }}>
-
-      <div className='store'>
-
-        <div className='topContainer'>
-
-          <div className='wandChoices'>
-            <div className='wand' onClick={classicHandler}>Classic</div>
-            <div className='wand' onClick={naturalHandler}>Natural</div>
-            <div className='wand' onClick={crookedSpiralHandler}>Crooked Spiral</div>
-            <div className='wand' onClick={notchedHandler}>Notched</div>
-            <div className='wand' onClick={ringedHandler}>Ringed</div>
-            <div className='wand' onClick={softSpiralHandler}>Soft Spiral</div>
-            <div className='wand' onClick={spiralHandler}>Spiral</div>
-            <div className='wand' onClick={stalkHandler}>Stalk</div>
+  if (Auth.loggedIn()) {
+    return (
+      <div style={{ fontFamily: 'aclonica' }}>
+  
+        <div className='store'>
+  
+          <div className='topContainer'>
+  
+            <div className='wandChoices'>
+              <div className='wand' onClick={classicHandler}>Classic</div>
+              <div className='wand' onClick={naturalHandler}>Natural</div>
+              <div className='wand' onClick={crookedSpiralHandler}>Crooked Spiral</div>
+              <div className='wand' onClick={notchedHandler}>Notched</div>
+              <div className='wand' onClick={ringedHandler}>Ringed</div>
+              <div className='wand' onClick={softSpiralHandler}>Soft Spiral</div>
+              <div className='wand' onClick={spiralHandler}>Spiral</div>
+              <div className='wand' onClick={stalkHandler}>Stalk</div>
+            </div>
+  
+            <div className='wandImg'>
+              <img src={wand?.src || ''} alt={wand?.label || ''} />
+            </div>
+  
+            <div className='colorSection'>
+              {wandStyle ? <p>Wood type: {hoveredWandLabel || labelName}</p> : null}
+              <div className='colorChoices'>{wandStyle}</div>
+            </div>
+  
           </div>
-
-          <div className='wandImg'>
-            <img src={wand?.src || ''} alt={wand?.label || ''} />
+  
+          <div className='bottomContainer'>
+  
+            <div className='aside'>
+              <Aside optionsHandler={optionsHandler} />
+            </div>
+  
+            <div className='button'>
+              <button onClick={checkWand}>Is this your wand?</button>
+              <p> {isWandValid === undefined ? (<div></div>
+              ) : (isWandValid ? (
+                <div className='afterBtn'>YES! <button onClick={checkout}>Checkout</button></div>
+              ) : (
+                <div className='afterBtn'>No, try again</div>
+              )
+              )}
+              </p>
+            </div>
           </div>
-
-          <div className='colorSection'>
-            {wandStyle ? <p>Wood type: {hoveredWandLabel || labelName}</p> : null}
-            <div className='colorChoices'>{wandStyle}</div>
-          </div>
-
+  
         </div>
-
-        <div className='bottomContainer'>
-
-          <div className='aside'>
-            <Aside optionsHandler={optionsHandler} />
-          </div>
-
-          <div className='button'>
-            <button onClick={checkWand}>Is this your wand?</button>
-            <p> {isWandValid === undefined ? (<div></div>
-            ) : (isWandValid ? (
-              <div className='afterBtn'>YES! <button onClick={checkout}>Checkout</button></div>
-            ) : (
-              <div className='afterBtn'>No, try again</div>
-            )
-            )}
-            </p>
-          </div>
-
-        </div>
-
+  
       </div>
-
-    </div>
-
-  );
+    );
+  } else {
+    return (
+      <div style={{ fontFamily: 'aclonica' }}>
+  
+        <div className='store'>
+  
+          <div className='topContainer'>
+  
+            <div className='wandChoices'>
+              <div className='wand' onClick={classicHandler}>Classic</div>
+              <div className='wand' onClick={naturalHandler}>Natural</div>
+              <div className='wand' onClick={crookedSpiralHandler}>Crooked Spiral</div>
+              <div className='wand' onClick={notchedHandler}>Notched</div>
+              <div className='wand' onClick={ringedHandler}>Ringed</div>
+              <div className='wand' onClick={softSpiralHandler}>Soft Spiral</div>
+              <div className='wand' onClick={spiralHandler}>Spiral</div>
+              <div className='wand' onClick={stalkHandler}>Stalk</div>
+            </div>
+  
+            <div className='wandImg'>
+              <img src={wand?.src || ''} alt={wand?.label || ''} />
+            </div>
+  
+            <div className='colorSection'>
+              {wandStyle ? <p>Wood type: {hoveredWandLabel || labelName}</p> : null}
+              <div className='colorChoices'>{wandStyle}</div>
+            </div>
+  
+          </div>
+  
+          <div className='bottomContainer'>
+  
+            <div className='aside'>
+              <Aside optionsHandler={optionsHandler} />
+            </div>
+  
+            <div className='notLoggedIn'>
+             <p> You Must Be Logged In To Pick A Wand!</p>
+            </div>
+          </div>
+  
+        </div>
+  
+      </div>
+    )
+}
 }
