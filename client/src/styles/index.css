@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
   }
 
   html {
@@ -12,6 +13,10 @@
     min-height: 100%;
     line-height: 1;
     font-size: 16px;
+    background: url(../assets/diagonAlley.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
   h1, h2, h3, h4, h5, h6 {
