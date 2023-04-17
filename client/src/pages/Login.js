@@ -3,7 +3,7 @@ import { useMutation } from '@apollo/client';
 import { Link } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { Box, Button } from '@mui/material';
+import { Button } from '@mui/material';
 
 function Login(props) {
     const [formState, setFormState] = useState({ username: '', password: '' });
@@ -32,46 +32,23 @@ function Login(props) {
 
     return (
         <div className="container" style={{ fontFamily: 'aclonica' }}>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'align-self',
-                    alignItems: 'center',
-                    justifyContent: 'space-evenly',
-                    height: '8vh',
-                    backgroundColor: '#bdbdbd',
-                    width: '80%',
-                    margin: 'auto',
-                    border: 1
-
-                }}>
-                First Time?
-                <Link underline='none' to="/signup">
-                    <Button
-                        variant='contained'
-                        sx={{
-                            paddingTop: '5px',
-                            paddingBottom: '5px',
-                            backgroundColor: 'white',
-                            color: 'black',
-                        }}>Signup
-                    </Button>
-                </Link>
-            </Box>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    height: '8vh',
-                    marginTop: '4vh',
-                    border: 1,
-                    paddingBottom: '6vh',
-                    paddingTop: '4vh',
-                    backgroundColor: '#bdbdbd',
-
-                }}>
+            <div className='reroute'>
+                <div style={{ textAlign: 'center' }}>First Time?</div>
+                <div>
+                    <Link underline='none' to="/signup">
+                        <Button
+                            variant='contained'
+                            sx={{
+                                paddingTop: '5px',
+                                paddingBottom: '5px',
+                                backgroundColor: 'white',
+                                color: 'black',
+                            }}>Signup
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+            <div className='login'>
                 <h2>Login</h2>
                 <form onSubmit={handleFormSubmit}>
                     <div className='flex-row space-between my-2'>
@@ -103,7 +80,7 @@ function Login(props) {
                         <button type='submit' >Submit</button>
                     </div>
                 </form>
-            </Box>
+            </div>
         </div>
 
     );

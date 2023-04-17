@@ -1,3 +1,48 @@
+/* Main page */
+.storefrontHeader {
+    background-color: #1C2E4A;
+    color: #D4AF37;
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+}
+.storeFront {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px
+}
+
+.storefrontImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.enterBtn {
+    position: absolute;
+    top: 280px;
+    left: 42%;
+    width: 60px;
+    height: 130px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 10%;
+    align-items: center;
+}
+
+/* Store */
 .store {
     display: flex;
     flex-direction: column;
@@ -19,7 +64,13 @@
     margin: 10px;
 }
 
-.wandImgm, .wand, .colorSection, .aside, .button, .afterBtn, .asideOptn {
+.wandImgm,
+.wand,
+.colorSection,
+.aside,
+.button,
+.afterBtn,
+.asideOptn {
     margin: 10px;
 }
 
@@ -40,20 +91,23 @@
     gap: 10px;
 }
 
-.header {
+/* Sign Up */
+.reroute {
+    font-size: 20px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-}
-
-.headerLinks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0 10%;
     align-items: center;
 }
 
-@media  screen and (min-width: 600px) {
+.signUp, .login {
+    font-size: 20px;
+    padding: 20px;
+    width: 80%;
+    margin: auto;
+}
+
+@media screen and (min-width: 600px) {
     .store {
         flex-direction: column;
         align-items: flex-start
@@ -86,6 +140,23 @@
     .headerLinks {
         width: 100%;
     }
+
+    .storefrontHeader {
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    .enterBtn {
+        top: 275px;
+        left: 46%;
+        width: 60px;
+        height: 130px;
+    }
+
+    .signUp, .login {
+        padding: 20px 0px 20px 90px;
+        width: 70%;
+    }
 }
 
 @media screen and (min-width: 1000px) {
@@ -105,6 +176,31 @@
     .headerLinks {
         width: 40%;
     }
+
+    .storefrontImg {
+        width: 50%;
+    }
+
+    .storeFront {
+        min-height: 9vh;
+    }
+
+    .storefrontHeader {
+        font-size: 35px;
+        padding: 10px;
+    }
+
+    .enterBtn {
+        top: 360px;
+        left: 45%;
+        width: 110px;
+        height: 220px;
+    }
+
+    .signUp, .login {
+        padding: 20px 0px 20px 130px;
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -119,6 +215,22 @@
     .headerLinks {
         width: 30%;
     }
+
+    .storefrontImg {
+        width: 60%;
+    }
+
+    .enterBtn {
+        top: 490px;
+        left: 44%;
+        width: 180px;
+        height: 390px;
+    }
+
+    .signUp, .login {
+        padding: 20px 0px 20px 120px;
+        width: 40%;
+    }
 }
 
 @media screen and (min-width: 1900px) {
@@ -128,5 +240,21 @@
 
     .headerLinks {
         width: 20%;
+    }
+
+    .storefrontImg {
+        width: 40%;
+    }
+
+    .enterBtn {
+        top: 460px;
+        left: 46%;
+        width: 160px;
+        height: 340px;
+    }
+
+    .signUp, .login {
+        padding: 20px 0px 20px 120px;
+        width: 30%;
     }
 }
