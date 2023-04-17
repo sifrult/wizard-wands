@@ -106,6 +106,13 @@
     width: 80%;
     margin: auto;
 }
+.error-text {
+    padding-top: 25px;
+    color: rgb(158, 5, 5);
+}
+.submitBtn {
+    padding-top: 25px;
+}
 
 @media screen and (min-width: 600px) {
     .store {
