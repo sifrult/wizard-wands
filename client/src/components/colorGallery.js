@@ -14,6 +14,4 @@ export default function ColorGallery({color,setColor}) {
             </div>
         </div>
     );
-
-    
 }

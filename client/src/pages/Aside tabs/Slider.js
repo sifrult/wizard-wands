@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 const marks = [
   {
@@ -87,17 +86,9 @@ const handleChange = (event) => {
 }
 
   return (
-    <Box
-      sx={{
-        width: 300,
-        pt: 15,
-        pb: 25,
-        textAlign: 'center'
-      }}>
-        <p>Wand Length:</p>
+    <div className='asideOptn'>
+      <p>Wand Length:</p>
       <Slider
-        alignItems="center"
-        justify="center"
         aria-label="Custom marks"
         defaultValue={20}
         getAriaValueText={valuetext}
@@ -108,7 +99,8 @@ const handleChange = (event) => {
         max={14.5}
         value={length}
         onChange={handleChange}
+        className='wandslider'
       />
-    </Box>
-  );
+    </div>
+  )
 }
