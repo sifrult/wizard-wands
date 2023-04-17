@@ -7,7 +7,7 @@ import { Button } from '@mui/material';
 
 function Signup(props) {
     const [formState, setFormState] = useState({ username: '', password: '' });
-    const [addUser] = useMutation(ADD_USER);
+    const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -69,6 +69,11 @@ function Signup(props) {
                             onChange={handleChange}
                         />
                     </div>
+                    {error ? (
+                        <div>
+                            <p className="error-text">Username is already taken!</p>
+                        </div>
+                    ) : null}
                     <div className='submitBtn'>
                         <button type='submit'>Submit</button>
                     </div>

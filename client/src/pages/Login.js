@@ -76,7 +76,7 @@ function Login(props) {
                             <p className="error-text">Username or password is incorrect</p>
                         </div>
                     ) : null}
-                    <div className='flex-row flex-end'>
+                    <div className='submitBtn'>
                         <button type='submit' >Submit</button>
                     </div>
                 </form>
