@@ -26,4 +26,4 @@ Collaborators:
 <a href="https://github.com/Ksteed8859">Kate Steed</a><br>
 
 ## Link
-Click <a href="https://wizard-wands-production.up.railway.app/">here</a> to view deployed app.
+Click <a href="https://wizard-wands-production-156b.up.railway.app">here</a> to view deployed app.
